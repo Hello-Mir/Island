@@ -1,0 +1,22 @@
+{
+  "creaturesSet": [
+    {
+      "rabbit": {
+        "name": "заяц",
+        "icon": "\uD83D\uDC07"
+      }
+    },
+    {
+      "fox": {
+        "name": "лиса",
+        "icon": "\uD83E\uDD8A"
+      }
+    },
+    {
+      "herb": {
+        "name": "трава",
+        "icon": "\uD83C\uDF3F"
+      }
+    }
+  ]
+}
