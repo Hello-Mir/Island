@@ -1,22 +1,66 @@
 {
-  "creaturesSet": [
-    {
-      "rabbit": {
-        "name": "заяц",
-        "icon": "\uD83D\uDC07"
-      }
-    },
-    {
-      "fox": {
-        "name": "лиса",
-        "icon": "\uD83E\uDD8A"
-      }
-    },
-    {
-      "herb": {
-        "name": "трава",
-        "icon": "\uD83C\uDF3F"
-      }
-    }
-  ]
+  "fox": {
+    "name": "fox",
+    "icon": "\uD83E\uDD8A"
+  },
+  "boar": {
+    "name": "boar",
+    "icon": "\uD83D\uDC17"
+  },
+  "bear": {
+    "name": "bear",
+    "icon": "\uD83D\uDC3B"
+  },
+  "deer": {
+    "name": "deer",
+    "icon": "\uD83E\uDD8C"
+  },
+  "duck": {
+    "name": "duck",
+    "icon": "\uD83E\uDD86"
+  },
+  "goat": {
+    "name": "goat",
+    "icon": "\uD83D\uDC10"
+  },
+  "herb": {
+    "name": "herb",
+    "icon": "\uD83C\uDF3F"
+  },
+  "wolf": {
+    "name": "wolf",
+    "icon": "\uD83D\uDC3A"
+  },
+  "eagle": {
+    "name": "eagle",
+    "icon": "\uD83E\uDD85"
+  },
+  "horse": {
+    "name": "horse",
+    "icon": "\uD83D\uDC0E"
+  },
+  "mouse": {
+    "name": "mouse",
+    "icon": "\uD83D\uDC2D"
+  },
+  "snake": {
+    "name": "snake",
+    "icon": "\uD83D\uDC0D"
+  },
+  "sheep": {
+    "name": "sheep",
+    "icon": "\uD83D\uDC11"
+  },
+  "rabbit": {
+    "name": "rabbit",
+    "icon": "\uD83D\uDC07"
+  },
+  "buffalo": {
+    "name": "buffalo",
+    "icon": "\uD83E\uDDAC"
+  },
+  "caterpillar": {
+    "name": "caterpillar",
+    "icon": "\uD83D\uDC1B"
+  }
 }

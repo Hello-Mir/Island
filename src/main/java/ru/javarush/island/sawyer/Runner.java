@@ -10,6 +10,7 @@ import ru.javarush.island.sawyer.entities.creatures.plants.Herb;
 import ru.javarush.island.sawyer.services.ClassFinder;
 import ru.javarush.island.sawyer.services.Prototypes;
 
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -20,21 +21,27 @@ public class Runner {
         Class<?>[] setOfClasses = classFinder.collectClassesFromPackage(Properties.CREATURE_PACKAGE_PATH);
         Prototypes prototypes = new Prototypes(setOfClasses, "voidName", "voidIcon");
 //        System.out.println(prototypes);
-
-        CreatureModels creatureModels = prototypes.initPropertyValues();
-        System.out.println(creatureModels);
+//
+//        CreatureModels creatureModels = prototypes.initPropertyValues();
+//        System.out.println(creatureModels);
 
         // ==========================================
 //        CreatureModels creatureModels1 = new CreatureModels(
 //                new Rabbit("заяц", "иконка зайца"),
 //                new Fox("лиса", "иконка лисы"),
-//                new Herb("трава", "иконка травы")
-//        );
-//        try (FileWriter fileWriter = new FileWriter("src/main/resources/sawyer/properties.json")) {
+//                boar, bear, deer, duck, goat, new Herb("трава", "иконка травы"),
+//                wolf, eagle, horse, mouse, snake, sheep, buffalo, caterpillar);
 //            Gson gson = new Gson();
+//        try (FileWriter fileWriter = new FileWriter("src/main/resources/sawyer/properties.json")) {
 //            JsonWriter jsonWriter = new JsonWriter(fileWriter);
 //            gson.toJson(creatureModels1, fileWriter);
 //        }
+        Gson gson = new Gson();
+        try (FileReader fileReader = new FileReader(Properties.CONFIG_PATH)) {
+            CreatureModels creatureModels = gson.fromJson(fileReader, CreatureModels.class);
+            System.out.println(creatureModels);
+        }
+
         // ===================================
         // todo оформить readme
         // jackson/github
