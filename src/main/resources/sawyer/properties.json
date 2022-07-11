@@ -1,66 +1,128 @@
 {
   "fox": {
     "name": "fox",
-    "icon": "\uD83E\uDD8A"
+    "icon": "\uD83E\uDD8A",
+    "weight:" : 8,
+    "speed": 2,
+    "totalFoodMass": 2,
+    "maxToSpawn": 30
   },
   "boar": {
     "name": "boar",
-    "icon": "\uD83D\uDC17"
+    "icon": "\uD83D\uDC17",
+    "weight:" : 400,
+    "speed": 2,
+    "totalFoodMass": 50,
+    "maxToSpawn": 50
   },
   "bear": {
     "name": "bear",
-    "icon": "\uD83D\uDC3B"
+    "icon": "\uD83D\uDC3B",
+    "weight:" : 500,
+    "speed": 2,
+    "totalFoodMass": 80,
+    "maxToSpawn": 5
   },
   "deer": {
     "name": "deer",
-    "icon": "\uD83E\uDD8C"
+    "icon": "\uD83E\uDD8C",
+    "weight:" : 300,
+    "speed": 4,
+    "totalFoodMass": 50,
+    "maxToSpawn": 20
   },
   "duck": {
     "name": "duck",
-    "icon": "\uD83E\uDD86"
+    "icon": "\uD83E\uDD86",
+    "weight:" : 1,
+    "speed": 4,
+    "totalFoodMass": 0.1,
+    "maxToSpawn": 30
   },
   "goat": {
     "name": "goat",
-    "icon": "\uD83D\uDC10"
+    "icon": "\uD83D\uDC10",
+    "weight:" : 50,
+    "speed": 3,
+    "totalFoodMass": 10,
+    "maxToSpawn": 140
   },
   "herb": {
     "name": "herb",
-    "icon": "\uD83C\uDF3F"
+    "icon": "\uD83C\uDF3F",
+    "weight:" : 1,
+    "maxToSpawn": 200
   },
   "wolf": {
     "name": "wolf",
-    "icon": "\uD83D\uDC3A"
+    "icon": "\uD83D\uDC3A",
+    "weight:" : 50,
+    "speed": 3,
+    "totalFoodMass": 30,
+    "maxToSpawn": 30
   },
   "eagle": {
     "name": "eagle",
-    "icon": "\uD83E\uDD85"
+    "icon": "\uD83E\uDD85",
+    "weight:" : 6,
+    "speed": 3,
+    "totalFoodMass": 1,
+    "maxToSpawn": 20
   },
   "horse": {
     "name": "horse",
-    "icon": "\uD83D\uDC0E"
+    "icon": "\uD83D\uDC0E",
+    "weight:" : 400,
+    "speed": 4,
+    "totalFoodMass": 60,
+    "maxToSpawn": 20
   },
   "mouse": {
     "name": "mouse",
-    "icon": "\uD83D\uDC2D"
+    "icon": "\uD83D\uDC2D",
+    "weight:" : 0.05,
+    "speed": 1,
+    "totalFoodMass": 0.01,
+    "maxToSpawn": 500
   },
-  "snake": {
-    "name": "snake",
-    "icon": "\uD83D\uDC0D"
+  "boa": {
+    "name": "boa",
+    "icon": "\uD83D\uDC0D",
+    "weight:" : 15,
+    "speed": 1,
+    "totalFoodMass": 3,
+    "maxToSpawn": 30
   },
   "sheep": {
     "name": "sheep",
-    "icon": "\uD83D\uDC11"
+    "icon": "\uD83D\uDC11",
+    "weight:" : 70,
+    "speed": 3,
+    "totalFoodMass": 15,
+    "maxToSpawn": 140
   },
   "rabbit": {
     "name": "rabbit",
-    "icon": "\uD83D\uDC07"
+    "icon": "\uD83D\uDC07",
+    "weight:" : 2,
+    "speed": 2,
+    "totalFoodMass": 0.4,
+    "maxToSpawn": 150
   },
   "buffalo": {
     "name": "buffalo",
-    "icon": "\uD83E\uDDAC"
+    "icon": "\uD83E\uDDAC",
+    "weight:" : 700,
+    "speed": 3,
+    "totalFoodMass": 100,
+    "maxToSpawn": 10
   },
   "caterpillar": {
     "name": "caterpillar",
-    "icon": "\uD83D\uDC1B"
+    "icon": "\uD83D\uDC1B",
+    "weight:" : 0.01,
+    "speed": 0,
+    "totalFoodMass": 0,
+    "maxToSpawn": 1000
   }
 }

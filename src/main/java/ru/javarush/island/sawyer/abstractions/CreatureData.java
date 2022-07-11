@@ -11,4 +11,10 @@ public @interface CreatureData {
     String name();
 
     String icon();
+
+    double weight();
+    int speed();
+    double totalFoodMass();
+
+    int maxToSpawn();
 }

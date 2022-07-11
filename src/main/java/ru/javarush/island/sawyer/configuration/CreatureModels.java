@@ -16,7 +16,7 @@ public final class CreatureModels {
     private final Eagle eagle;
     private final Horse horse;
     private final Mouse mouse;
-    private final Snake snake;
+    private final Boa boa;
     private final Sheep sheep;
     private final Rabbit rabbit;
     private final Buffalo buffalo;
@@ -25,7 +25,7 @@ public final class CreatureModels {
     public CreatureModels(Fox fox, Boar boar, Bear bear,
                           Deer deer, Duck duck, Goat goat,
                           Herb herb, Wolf wolf, Eagle eagle,
-                          Horse horse, Mouse mouse, Snake snake,
+                          Horse horse, Mouse mouse, Boa boa,
                           Sheep sheep, Rabbit rabbit, Buffalo buffalo, Caterpillar caterpillar) {
         this.fox = fox;
         this.boar = boar;
@@ -39,7 +39,7 @@ public final class CreatureModels {
         this.eagle = eagle;
         this.horse = horse;
         this.mouse = mouse;
-        this.snake = snake;
+        this.boa = boa;
         this.sheep = sheep;
         this.rabbit = rabbit;
         this.buffalo = buffalo;
@@ -60,7 +60,7 @@ public final class CreatureModels {
                 ", eagle=" + eagle +
                 ", horse=" + horse +
                 ", mouse=" + mouse +
-                ", snake=" + snake +
+                ", boa=" + boa +
                 ", sheep=" + sheep +
                 ", rabbit=" + rabbit +
                 ", buffalo=" + buffalo +

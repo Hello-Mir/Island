@@ -1,6 +1,5 @@
 package ru.javarush.island.sawyer.services;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import ru.javarush.island.sawyer.abstractions.CreatureData;
 import ru.javarush.island.sawyer.configuration.CreatureModels;
@@ -17,19 +16,25 @@ import java.util.Set;
 public class Prototypes {
     private final Set<Creature> prototypesSet;
 
-    public Prototypes(Class<?>[] classes, String nameParam, String iconParam) {
-        this.prototypesSet = preparePrototype(classes, nameParam, iconParam);
+    public Prototypes(Class<?>[] classes) {
+        this.prototypesSet = preparePrototype(classes);
     }
 
-    private Set<Creature> preparePrototype(Class<?>[] classes, String nameParam, String iconParam) {
+    private Set<Creature> preparePrototype(Class<?>[] classes) {
         Set<Creature> aSet = new HashSet<>();
         for (Class<?> aClass : classes) {
             try {
-                Constructor<?> constructor = aClass.getConstructor(String.class, String.class);
+                Constructor<?> constructor = aClass.getConstructor(String.class, String.class, Double.class, int.class, Double.class, int.class);
                 CreatureData className = aClass.getAnnotation(CreatureData.class);
                 String nameFromAnnotation = className.name();
                 String iconFromAnnotation = className.icon();
-                Creature prototype = (Creature) constructor.newInstance(nameFromAnnotation, iconFromAnnotation);
+                int speedFromAnnotation = className.speed();
+                Double weightFromAnnotation = className.weight();
+                int maxToSpawnFromAnnotation = className.maxToSpawn();
+                Double totalFoodMassFromAnnotation = className.totalFoodMass();
+
+                Creature prototype = (Creature) constructor.newInstance(nameFromAnnotation, iconFromAnnotation,
+                        weightFromAnnotation, speedFromAnnotation, totalFoodMassFromAnnotation, maxToSpawnFromAnnotation);
                 aSet.add(prototype);
             } catch (NoSuchMethodException | InstantiationException | IllegalAccessException |
                      InvocationTargetException e) {
