@@ -1,17 +1,12 @@
 package ru.javarush.island.sawyer;
 
 import com.google.gson.Gson;
-import com.google.gson.stream.JsonWriter;
 import ru.javarush.island.sawyer.configuration.CreatureModels;
 import ru.javarush.island.sawyer.configuration.Properties;
-import ru.javarush.island.sawyer.entities.creatures.animals.herbivores.Rabbit;
-import ru.javarush.island.sawyer.entities.creatures.animals.predators.Fox;
-import ru.javarush.island.sawyer.entities.creatures.plants.Herb;
 import ru.javarush.island.sawyer.services.ClassFinder;
 import ru.javarush.island.sawyer.services.Prototypes;
 
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
@@ -26,7 +21,6 @@ public class Runner {
             System.out.println(creatureModels);
         }
 
-        // ===================================
         // todo оформить readme
     }
     /*

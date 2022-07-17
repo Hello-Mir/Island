@@ -1,14 +1,17 @@
 package ru.javarush.island.sawyer.exceptions;
 
 public class IslandGameException extends RuntimeException {
-    private String exceptionTypeName;
+    private final IslandExceptionTypes exceptionTypes;
 
     public IslandGameException(IslandExceptionTypes exceptionType, Exception e) {
         super(e);
-        this.exceptionTypeName = exceptionType.name();
+        this.exceptionTypes = exceptionType;
     }
 
-    public String getExceptionTypeName() {
-        return exceptionTypeName;
+    @Override
+    public String toString() {
+        return "IslandGameException{" +
+                "exceptionCode=" + exceptionTypes.getCode() +
+                '}';
     }
 }
