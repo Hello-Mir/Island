@@ -14,7 +14,7 @@ public @interface CreatureData {
 
     double weight();
     int speed();
-    double totalFoodMass();
+    double totalFoodWeight();
 
     int maxToSpawn();
 }

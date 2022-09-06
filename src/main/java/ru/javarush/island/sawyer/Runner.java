@@ -1,34 +1,20 @@
 package ru.javarush.island.sawyer;
 
-import com.google.gson.Gson;
-import ru.javarush.island.sawyer.configuration.CreatureModels;
-import ru.javarush.island.sawyer.configuration.Properties;
-import ru.javarush.island.sawyer.services.ClassFinder;
-import ru.javarush.island.sawyer.services.Prototypes;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import ru.javarush.island.sawyer.entities.creatures.Person;
 
-import java.io.FileReader;
+import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
+import java.io.Serializable;
 
-public class Runner {
-    public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, ClassNotFoundException, IOException {
-        ClassFinder classFinder = new ClassFinder();
-        Class<?>[] setOfClasses = classFinder.collectClassesFromPackage(Properties.CREATURE_PACKAGE_PATH);
-        Prototypes prototypes = new Prototypes(setOfClasses);
-        Gson gson = new Gson();
-        try (FileReader fileReader = new FileReader(Properties.CONFIG_PATH)) {
-            CreatureModels creatureModels = gson.fromJson(fileReader, CreatureModels.class);
-            System.out.println(creatureModels);
-        }
+public class Runner implements Serializable {
+    public static void main(String[] args) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+//        File file = new File(RATION_PATH);
+        File file = new File("src/main/resources/sawyer/person.yml");
+        Person person = objectMapper.readValue(file, Person.class);
 
-        // todo оформить readme
     }
-    /*
-    размножить животных до нужного числа:
-        1) реализовать Cloneable()
-        2) переопределить clone()
-
-     */
 
     /*
     -----

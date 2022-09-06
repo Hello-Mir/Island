@@ -1,7 +1,7 @@
 package ru.javarush.island.sawyer.configuration;
 
 import ru.javarush.island.sawyer.entities.creatures.animals.herbivores.*;
-import ru.javarush.island.sawyer.entities.creatures.animals.predators.*;
+import ru.javarush.island.sawyer.entities.creatures.animals.carinvores.*;
 import ru.javarush.island.sawyer.entities.creatures.plants.Herb;
 
 public final class CreatureModels {

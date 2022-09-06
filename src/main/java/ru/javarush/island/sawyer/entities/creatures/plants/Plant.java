@@ -1,10 +1,11 @@
 package ru.javarush.island.sawyer.entities.creatures.plants;
 
 import ru.javarush.island.sawyer.entities.creatures.Creature;
+import ru.javarush.island.sawyer.entities.creatures.Ration;
 
 public abstract class Plant extends Creature {
-    public Plant(String name, String icon, Double weight, int speed, Double totalFoodMass, int maxToSpawn) {
-        super(name, icon, weight, speed, totalFoodMass, maxToSpawn);
+    public Plant(String name, String icon, Double weight, int speed, Double totalFoodWeight, int maxToSpawn) {
+        super(name, icon, weight, speed, totalFoodWeight, maxToSpawn);
     }
 
     @Override

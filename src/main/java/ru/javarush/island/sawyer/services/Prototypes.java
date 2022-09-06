@@ -1,10 +1,8 @@
 package ru.javarush.island.sawyer.services;
 
-import com.google.gson.Gson;
 import ru.javarush.island.sawyer.abstractions.CreatureData;
-import ru.javarush.island.sawyer.configuration.CreatureModels;
-import ru.javarush.island.sawyer.configuration.Properties;
 import ru.javarush.island.sawyer.entities.creatures.Creature;
+import ru.javarush.island.sawyer.entities.creatures.animals.herbivores.Rabbit;
 import ru.javarush.island.sawyer.exceptions.IslandExceptionTypes;
 import ru.javarush.island.sawyer.exceptions.IslandGameException;
 
@@ -24,14 +22,17 @@ public class Prototypes {
         Set<Creature> aSet = new HashSet<>();
         for (Class<?> aClass : classes) {
             try {
-                Constructor<?> constructor = aClass.getConstructor(String.class, String.class, Double.class, int.class, Double.class, int.class);
                 CreatureData className = aClass.getAnnotation(CreatureData.class);
                 String nameFromAnnotation = className.name();
                 String iconFromAnnotation = className.icon();
                 int speedFromAnnotation = className.speed();
                 Double weightFromAnnotation = className.weight();
                 int maxToSpawnFromAnnotation = className.maxToSpawn();
-                Double totalFoodMassFromAnnotation = className.totalFoodMass();
+                Double totalFoodMassFromAnnotation = className.totalFoodWeight();
+
+                Constructor<?> constructor = aClass.getConstructor(
+                        String.class, String.class,
+                        Double.class, int.class, Double.class, int.class);
 
                 Creature prototype = (Creature) constructor.newInstance(nameFromAnnotation, iconFromAnnotation,
                         weightFromAnnotation, speedFromAnnotation, totalFoodMassFromAnnotation, maxToSpawnFromAnnotation);
@@ -44,10 +45,23 @@ public class Prototypes {
         return aSet;
     }
 
-    public CreatureModels initPropertyValues() {
-        Gson gson = new Gson();
-        return gson.fromJson(Properties.CONFIG_PATH, CreatureModels.class);
+    public Set<Creature> createFromPrototypes() {
+        Set<Creature> creaturesForOneField = new HashSet<>();
+        for (Creature aCreature : prototypesSet) {
+            if (aCreature instanceof Rabbit ) {
+                int maxToSpawn = aCreature.getMaxToSpawn();
+                while (maxToSpawn > 0) {
+                    Creature clone = aCreature.clone();
+                    creaturesForOneField.add(clone);
+                    maxToSpawn--;
+                }
+            }
+        }
+        return creaturesForOneField;
     }
+    //todo продумать создание множества 1 класса Животных из списка прототипов
+    // HashMap<Class,Set<1 класс Животных>> map
+    // как хранит 1 ячейка множество всех классов животных - Множество{множество Лис, множество Зайцев...)
 
     @Override
     public String toString() {

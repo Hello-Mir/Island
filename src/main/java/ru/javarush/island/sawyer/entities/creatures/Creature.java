@@ -2,24 +2,24 @@ package ru.javarush.island.sawyer.entities.creatures;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import ru.javarush.island.sawyer.util.Randomizer;
 
 public abstract class Creature implements Cloneable {
     private String name;
     private String icon;
 
-    private final Double weight;
+    private Double weight;
 
     private final int speed;
-    private final Double totalFoodMass;
+    private final Double totalFoodWeight;
     private final int maxToSpawn;
-
-    public Creature(String name, String icon, Double weight, int speed, Double totalFoodMass, int maxToSpawn) {
+    public Creature(String name, String icon, Double weight, int speed, Double totalFoodWeight, int maxToSpawn) {
 
         this.name = name;
         this.icon = icon;
         this.weight = weight;
         this.speed = speed;
-        this.totalFoodMass = totalFoodMass;
+        this.totalFoodWeight = totalFoodWeight;
         this.maxToSpawn = maxToSpawn;
     }
 
@@ -51,13 +51,18 @@ public abstract class Creature implements Cloneable {
         return weight;
     }
 
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
     public int getSpeed() {
         return speed;
     }
 
-    public Double getTotalFoodMass() {
-        return totalFoodMass;
+    public Double getTotalFoodWeight() {
+        return totalFoodWeight;
     }
+
 
     public void move() {
 
@@ -84,7 +89,7 @@ public abstract class Creature implements Cloneable {
     public Creature clone() {
         try {
             Creature clone = (Creature) super.clone();
-            // TODO: copy mutable state here, so the clone can't change the internals of the original
+            clone.setWeight(Randomizer.getRandomWeight(weight));
             return clone;
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();

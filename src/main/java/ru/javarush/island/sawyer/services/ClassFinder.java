@@ -12,9 +12,7 @@ public class ClassFinder {
         Set<Class<?>> typesAnnotatedWith = reflections.getTypesAnnotatedWith(CreatureData.class);
         Class<?>[] classArray = new Class[typesAnnotatedWith.size()];
         ArrayList<Class<?>> classes = new ArrayList<>();
-        typesAnnotatedWith.parallelStream().forEach((clazz) -> {
-            classes.add(clazz);
-        });
+        typesAnnotatedWith.parallelStream().forEach(classes::add);
         classes.toArray(classArray);
         return classArray;
     }
